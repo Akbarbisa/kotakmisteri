@@ -12,7 +12,6 @@
             --gold-light: #fef08a;
             --gold-dark: #854d0e;
             --neutral-400: #9ca3af;
-            --neutral-900: #171717;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,315 +21,191 @@
             color: white;
             font-family: 'DM Sans', sans-serif;
             min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(234, 179, 8, 0.15), transparent 40%),
-                radial-gradient(circle at 0% 100%, rgba(234, 179, 8, 0.05), transparent 30%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(234, 179, 8, 0.15), transparent 40%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+        .container { width: 100%; max-width: 450px; padding: 20px; text-align: center; }
 
-        header { padding: 30px 0; width: 100%; display: flex; justify-content: center; }
-        .logo { height: 100px; max-width: 250px; object-fit: contain; filter: brightness(1.1) drop-shadow(0 0 15px rgba(234, 179, 8, 0.3)); }
+        header { padding: 20px 0; }
+        .logo { height: 60px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: rgba(133, 77, 14, 0.2);
+            padding: 8px 20px;
+            background: rgba(133, 77, 14, 0.1);
             border: 1px solid rgba(234, 179, 8, 0.3);
-            border-radius: 9999px;
+            border-radius: 99px;
             color: var(--gold-light);
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            line-height: 1.1;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            background: linear-gradient(to bottom, #ffffff 30%, #fef08a 100%);
+            background: linear-gradient(to bottom, #fff, #fef08a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .gold-text {
-            background: linear-gradient(to right, #fef08a, #eab308, #fef08a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
+        .gold-text { display: block; color: var(--gold-vivid); }
 
-        p.subtitle {
-            color: var(--neutral-400);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            padding: 0 20px;
-        }
+        .subtitle { color: #888; font-size: 13px; margin-bottom: 30px; }
 
-        .game-area { width: 100%; display: flex; flex-direction: column; align-items: center; }
-
-        .box-container {
-            width: 260px;
-            height: 260px;
-            margin: 0 auto 50px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .box-container:hover { transform: scale(1.05); }
+        .box-container { width: 180px; height: 180px; margin: 0 auto 30px; }
         .box-img { width: 100%; height: 100%; object-fit: contain; }
-
-        .controls { width: 100%; display: flex; flex-direction: column; gap: 18px; max-width: 380px; }
 
         input {
             width: 100%;
-            height: 65px;
-            background: rgba(23, 23, 23, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            height: 55px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
             color: white;
             text-align: center;
-            font-size: 18px;
-            letter-spacing: 3px;
+            font-size: 16px;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            outline: none;
         }
-        input:focus { border-color: var(--gold-vivid); box-shadow: 0 0 15px rgba(234, 179, 8, 0.1); }
-        input::placeholder { color: #444; letter-spacing: 1px; }
-
-        .support-text { font-size: 14px; color: #777; margin-top: 5px; }
-        .livechat-link { color: var(--gold-vivid); font-weight: bold; text-decoration: none; }
 
         .primary-btn {
             width: 100%;
-            height: 65px;
-            background: linear-gradient(180deg, #b8860b 0%, #854d0e 100%);
-            border: 1px solid rgba(234, 179, 8, 0.4);
-            border-radius: 12px;
-            color: #000;
-            font-weight: 900;
-            font-size: 18px;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-        }
-        .primary-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(234, 179, 8, 0.4); filter: brightness(1.1); }
-        .primary-btn:active { transform: translateY(0); }
-
-        .text-link {
-            background: none;
+            height: 55px;
+            background: linear-gradient(180deg, #c68e17 0%, #8b5a00 100%);
             border: none;
-            color: var(--gold-vivid);
-            text-decoration: underline;
-            font-size: 14px;
-            cursor: pointer;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .social-proof {
-            width: 100%;
-            max-width: 380px;
-            background: rgba(23, 23, 23, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 50px;
-            text-align: left;
-        }
-        .social-proof h3 {
-            font-size: 12px;
-            letter-spacing: 3px;
-            color: var(--gold-vivid);
-            margin-bottom: 25px;
-            text-align: center;
+            border-radius: 10px;
+            color: black;
+            font-weight: 800;
+            font-size: 16px;
             text-transform: uppercase;
-            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        .ticker-item {
-            font-size: 14px;
-            color: #ccc;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
+
+        .ticker-box {
+            width: 100%;
+            background: rgba(23, 23, 23, 0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 30px;
+            overflow: hidden;
         }
-        .ticker-item:last-child { border-bottom: none; }
-        .ticker-item span { color: var(--gold-vivid); font-weight: 700; }
 
-        footer { padding: 60px 0; color: #333; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+        .ticker-title { color: var(--gold-vivid); font-size: 10px; font-weight: 900; margin-bottom: 10px; letter-spacing: 2px; }
 
-        /* Modal */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95); z-index: 1000; backdrop-filter: blur(10px); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: #111; border: 2px solid var(--gold-dark); padding: 40px; border-radius: 24px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 0 60px rgba(234, 179, 8, 0.2); }
-        .congrats { font-size: 28px; margin-bottom: 12px; color: var(--gold-vivid); font-family: 'Playfair Display', serif; font-weight: 900; }
-        .won-prize { font-size: 32px; font-weight: 900; margin: 30px 0; color: white; letter-spacing: 1px; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .ticker-scroll { height: 80px; overflow: hidden; position: relative; }
+        .ticker-inner { position: absolute; width: 100%; animation: scrollUp 15s linear infinite; }
 
-        .prize-list { list-style: none; text-align: left; }
-        .prize-list li { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
-        .tag { background: var(--gold-vivid); color: black; font-size: 10px; padding: 4px 10px; border-radius: 5px; font-weight: 900; }
-
-        @keyframes shake {
-            10%, 90% { transform: translate3d(-2px, 0, 0); }
-            20%, 80% { transform: translate3d(4px, 0, 0); }
-            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
-            40%, 60% { transform: translate3d(6px, 0, 0); }
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
         }
-        .shake { animation: shake 0.6s both; }
 
-        @media (max-width: 480px) {
-            h1 { font-size: 2.2rem; }
-            .box-container { width: 220px; height: 220px; }
-            .logo { height: 80px; }
-        }
+        .ticker-item { font-size: 12px; padding: 5px 0; border-bottom: 1px dotted rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
+        .ticker-item span { color: var(--gold-light); }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal-content { background: #111; border: 1px solid var(--gold-dark); padding: 30px; border-radius: 20px; text-align: center; width: 85%; max-width: 350px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="https://kisahslot.com/wp-content/uploads/2024/02/LOGO-KISAH-SLOT-1.png" alt="KISAH SLOT" class="logo">
+            <img src="https://kisahslot.com/wp-content/uploads/2024/02/LOGO-KISAH-SLOT-1.png" class="logo" onerror="this.src='https://raw.githubusercontent.com/kisahslot-dev/assets/main/logo.png'">
         </header>
 
-        <main>
-            <div class="badge">
-                <span>⚒️ JANGAN SAMPAI DILEWATKAN</span>
+        <div class="badge">⚒️ JANGAN SAMPAI DILEWATKAN</div>
+        <h1>HADIAH SPECIAL <span class="gold-text">UNTUK MEMBER BARU!</span></h1>
+        <p class="subtitle">Masukan User Id Akun Anda Sekarang juga untuk melihat keberuntungan apa yang menanti hari ini</p>
+
+        <div class="box-container" id="mystery-box">
+            <img src="https://raw.githubusercontent.com/Tarik-K/mystery-box-assets/main/box-closed.png" class="box-img" onerror="this.src='https://www.freeiconspng.com/uploads/mystery-box-png-2.png'">
+        </div>
+
+        <input type="text" id="user-id" placeholder="MASUKAN USER ID">
+        <p style="font-size: 12px; color: #666; margin-bottom: 15px;">Belum punya akun? <a href="#" style="color:var(--gold-vivid); text-decoration:none; font-weight:bold;">Hubungi Livechat</a></p>
+        
+        <button id="open-btn" class="primary-btn">BUKA BOX SEKARANG</button>
+        <button onclick="document.getElementById('list-modal').style.display='flex'" style="background:none; border:none; color:var(--gold-vivid); text-decoration:underline; font-size:12px; margin-top:15px; cursor:pointer;">Lihat Daftar Hadiah</button>
+
+        <div class="ticker-box">
+            <div class="ticker-title">PEMENANG TERAKHIR</div>
+            <div class="ticker-scroll">
+                <div id="ticker-inner" class="ticker-inner"></div>
             </div>
-            <h1>HADIAH SPECIAL <span class="gold-text">UNTUK MEMBER BARU!</span></h1>
-            <p class="subtitle">Masukan User Id Akun Anda Sekarang juga untuk melihat keberuntungan apa yang menanti hari ini</p>
-
-            <div class="game-area">
-                <div class="box-container" id="mystery-box">
-                    <img src="https://raw.githubusercontent.com/kisahslot-dev/assets/main/mystery-box.png" alt="Mystery Box" class="box-img" onerror="this.src='https://www.freeiconspng.com/uploads/mystery-box-png-2.png'">
-                </div>
-
-                <div class="controls">
-                    <input type="text" id="user-id" placeholder="MASUKAN USER ID" autocomplete="off">
-                    <p class="support-text">Belum punya akun? <a href="https://static.zdassets.com/web_widget/latest/liveChat.html?v=10#key=kisahslot777.zendesk.com" target="_blank" class="livechat-link">Hubungi Livechat</a></p>
-                    <button id="open-btn" class="primary-btn">BUKA BOX SEKARANG</button>
-                    <button id="view-prizes-btn" class="text-link">Lihat Daftar Hadiah</button>
-                </div>
-
-                <div class="social-proof">
-                    <h3>PEMENANG TERAKHIR</h3>
-                    <div id="winner-ticker"></div>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            © 2024 KisahSlot Mystery Box. All rights reserved.
-        </footer>
-    </div>
-
-    <!-- Hadiah Modal -->
-    <div id="prize-modal" class="modal">
-        <div class="modal-content">
-            <h2 class="congrats">SELAMAT!</h2>
-            <p style="color: #888; font-size: 14px;">Anda Memenangkan Hadiah:</p>
-            <div id="won-prize" class="won-prize"></div>
-            <button class="primary-btn" id="claim-btn">KLAIM HADIAH</button>
         </div>
     </div>
 
-    <!-- Daftar Hadiah Modal -->
-    <div id="list-modal" class="modal">
-        <div class="modal-content list-modal">
-            <h3 style="color:var(--gold-vivid); margin-bottom:25px; text-transform: uppercase; letter-spacing: 3px; font-size: 18px;">HADIAH MYSTERY BOX</h3>
-            <ul class="prize-list">
-                <li><span>🎁 Saldo Kredit Rp 500.000</span> <span class="tag">UTAMA</span></li>
-                <li><span>🎁 iPhone 17 Pro Max</span></li>
-                <li><span>🎁 Emas Antam 3 Gram</span></li>
-                <li><span>🎁 Saldo Kredit Rp 100.000</span></li>
-                <li><span>🎁 Saldo Kredit Rp 50.000</span></li>
-                <li><span>🎁 Saldo Kredit Rp 25.000</span></li>
+    <div id="prize-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="color:var(--gold-vivid);">SELAMAT!</h2>
+            <p style="margin: 15px 0; font-size: 14px;">Anda Memenangkan:</p>
+            <div id="won-prize" style="font-size: 24px; font-weight: 900; color: white; margin-bottom: 25px;"></div>
+            <button class="primary-btn" onclick="window.location.href='https://slotkisah.org/'">KLAIM HADIAH</button>
+        </div>
+    </div>
+
+    <div id="list-modal" class="modal" onclick="this.style.display='none'">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 style="color:var(--gold-vivid); margin-bottom: 20px;">DAFTAR HADIAH</h3>
+            <ul style="list-style:none; text-align:left; font-size:14px;">
+                <li style="padding:10px 0; border-bottom:1px solid #222;">🎁 Saldo Rp 500.000</li>
+                <li style="padding:10px 0; border-bottom:1px solid #222;">🎁 iPhone 17 Pro Max</li>
+                <li style="padding:10px 0; border-bottom:1px solid #222;">🎁 Emas Antam 3 Gram</li>
             </ul>
-            <button class="primary-btn" id="close-list-btn" style="margin-top: 30px; color: #000;">TUTUP</button>
+            <button class="primary-btn" style="margin-top:20px;" onclick="document.getElementById('list-modal').style.display='none'">TUTUP</button>
         </div>
     </div>
 
     <script>
         const FIXED_PRIZE = "Saldo Kredit Rp 500.000";
-        const winners = [
-            { name: "Riky***", prize: "Saldo Kredit Rp 500.000" },
-            { name: "Siska***", prize: "Saldo Kredit Rp 500.000" },
-            { name: "Budi***", prize: "Saldo Kredit Rp 500.000" },
-            { name: "Vicky***", prize: "Saldo Kredit Rp 500.000" }
-        ];
-
-        const userIdInput = document.getElementById('user-id');
-        const openBtn = document.getElementById('open-btn');
-        const mysteryBox = document.getElementById('mystery-box');
-        const prizeModal = document.getElementById('prize-modal');
-        const listModal = document.getElementById('list-modal');
-        const wonPrizeText = document.getElementById('won-prize');
-        const ticker = document.getElementById('winner-ticker');
+        const winners = ["Andi***", "Siska***", "Budi***", "Rani***", "Vicky***", "Doni***", "Maya***", "Riky***"];
 
         function init() {
-            winners.forEach(w => {
-                const item = document.createElement('div');
-                item.className = 'ticker-item';
-                item.innerHTML = `<span>${w.name}</span> <strong>${w.prize}</strong>`;
-                ticker.appendChild(item);
+            const inner = document.getElementById('ticker-inner');
+            let content = "";
+            winners.forEach(name => {
+                content += `<div class="ticker-item"><span>${name}</span> <strong>${FIXED_PRIZE}</strong></div>`;
             });
+            inner.innerHTML = content + content; // Double for loop
         }
 
-        function handleOpen() {
-            const userId = userIdInput.value.trim();
-            if (!userId) { alert("User ID wajib diisi"); return; }
-            if (userId.length < 3) { alert("User ID minimal 3 karakter"); return; }
-
-            mysteryBox.classList.add('shake');
-            openBtn.disabled = true;
-            openBtn.innerText = "PROSES...";
+        document.getElementById('open-btn').addEventListener('click', () => {
+            const id = document.getElementById('user-id').value.trim();
+            if(id.length < 3) return alert("User ID minimal 3 karakter");
+            
+            const btn = document.getElementById('open-btn');
+            btn.disabled = true;
+            btn.innerText = "SEDANG MEMPROSES...";
+            document.getElementById('mystery-box').style.animation = "shake 0.5s infinite";
 
             setTimeout(() => {
-                mysteryBox.classList.remove('shake');
-                wonPrizeText.innerText = FIXED_PRIZE;
-                prizeModal.style.display = 'flex';
-            }, 1200);
-        }
-
-        openBtn.addEventListener('click', handleOpen);
-        document.getElementById('view-prizes-btn').addEventListener('click', () => listModal.style.display = 'flex');
-        document.getElementById('close-list-btn').addEventListener('click', () => listModal.style.display = 'none');
-        document.getElementById('claim-btn').addEventListener('click', () => {
-            window.location.href = "https://slotkisah.org/";
+                document.getElementById('won-prize').innerText = FIXED_PRIZE;
+                document.getElementById('prize-modal').style.display = 'flex';
+            }, 1500);
         });
 
-        window.onclick = function(event) {
-            if (event.target == prizeModal || event.target == listModal) {
-                prizeModal.style.display = "none";
-                listModal.style.display = "none";
-                openBtn.disabled = false;
-                openBtn.innerText = "BUKA BOX SEKARANG";
-                userIdInput.value = "";
-            }
-        }
         init();
     </script>
+    <style>
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
 </body>
 </html>
