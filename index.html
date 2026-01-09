@@ -42,14 +42,14 @@
             text-align: center;
         }
 
-        header { padding: 30px 0; }
+        header { padding: 30px 0; width: 100%; display: flex; justify-content: center; }
         .logo { height: 100px; max-width: 250px; object-fit: contain; filter: brightness(1.1) drop-shadow(0 0 15px rgba(234, 179, 8, 0.3)); }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 18px;
+            padding: 10px 20px;
             background: rgba(133, 77, 14, 0.2);
             border: 1px solid rgba(234, 179, 8, 0.3);
             border-radius: 9999px;
@@ -63,7 +63,7 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             line-height: 1.1;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -81,119 +81,138 @@
 
         p.subtitle {
             color: var(--neutral-400);
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 40px;
             padding: 0 20px;
         }
 
+        .game-area { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
         .box-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 40px;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 50px;
             cursor: pointer;
             transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .box-container:hover { transform: scale(1.05); }
         .box-img { width: 100%; height: 100%; object-fit: contain; }
 
-        .controls { width: 100%; display: flex; flex-direction: column; gap: 15px; }
+        .controls { width: 100%; display: flex; flex-direction: column; gap: 18px; max-width: 380px; }
 
         input {
             width: 100%;
-            height: 60px;
-            background: rgba(23, 23, 23, 0.8);
+            height: 65px;
+            background: rgba(23, 23, 23, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             color: white;
             text-align: center;
             font-size: 18px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            outline: none;
         }
+        input:focus { border-color: var(--gold-vivid); box-shadow: 0 0 15px rgba(234, 179, 8, 0.1); }
+        input::placeholder { color: #444; letter-spacing: 1px; }
 
-        .support-text { font-size: 13px; color: #888; margin-top: 5px; }
+        .support-text { font-size: 14px; color: #777; margin-top: 5px; }
         .livechat-link { color: var(--gold-vivid); font-weight: bold; text-decoration: none; }
 
         .primary-btn {
             width: 100%;
-            height: 60px;
+            height: 65px;
             background: linear-gradient(180deg, #b8860b 0%, #854d0e 100%);
             border: 1px solid rgba(234, 179, 8, 0.4);
             border-radius: 12px;
-            color: black;
-            font-weight: 800;
+            color: #000;
+            font-weight: 900;
             font-size: 18px;
             cursor: pointer;
             text-transform: uppercase;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
             transition: all 0.3s ease;
+            letter-spacing: 1px;
         }
-        .primary-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(234, 179, 8, 0.3); }
+        .primary-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(234, 179, 8, 0.4); filter: brightness(1.1); }
+        .primary-btn:active { transform: translateY(0); }
 
         .text-link {
             background: none;
             border: none;
             color: var(--gold-vivid);
             text-decoration: underline;
-            font-size: 13px;
+            font-size: 14px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
+            font-weight: 500;
         }
 
         .social-proof {
             width: 100%;
-            background: rgba(23, 23, 23, 0.4);
+            max-width: 380px;
+            background: rgba(23, 23, 23, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 25px;
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: left;
         }
         .social-proof h3 {
             font-size: 12px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--gold-vivid);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
             text-transform: uppercase;
+            font-weight: 900;
         }
         .ticker-item {
             font-size: 14px;
-            color: #ddd;
-            padding: 10px 0;
+            color: #ccc;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
             justify-content: space-between;
         }
-        .ticker-item span { color: var(--gold-vivid); font-weight: bold; }
+        .ticker-item:last-child { border-bottom: none; }
+        .ticker-item span { color: var(--gold-vivid); font-weight: 700; }
 
-        footer { padding: 40px 0; color: #444; font-size: 10px; letter-spacing: 2px; }
+        footer { padding: 60px 0; color: #333; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
 
         /* Modal */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9); z-index: 1000; backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: var(--neutral-900); border: 2px solid var(--gold-dark); padding: 35px; border-radius: 20px; width: 100%; max-width: 380px; text-align: center; box-shadow: 0 0 50px rgba(234, 179, 8, 0.2); }
-        .congrats { font-size: 26px; margin-bottom: 10px; color: var(--gold-vivid); font-family: 'Playfair Display', serif; }
-        .won-prize { font-size: 28px; font-weight: 900; margin: 25px 0; color: white; letter-spacing: 1px; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95); z-index: 1000; backdrop-filter: blur(10px); align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: #111; border: 2px solid var(--gold-dark); padding: 40px; border-radius: 24px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 0 60px rgba(234, 179, 8, 0.2); }
+        .congrats { font-size: 28px; margin-bottom: 12px; color: var(--gold-vivid); font-family: 'Playfair Display', serif; font-weight: 900; }
+        .won-prize { font-size: 32px; font-weight: 900; margin: 30px 0; color: white; letter-spacing: 1px; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
 
         .prize-list { list-style: none; text-align: left; }
-        .prize-list li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
-        .tag { background: var(--gold-vivid); color: black; font-size: 9px; padding: 3px 8px; border-radius: 4px; font-weight: 900; }
+        .prize-list li { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
+        .tag { background: var(--gold-vivid); color: black; font-size: 10px; padding: 4px 10px; border-radius: 5px; font-weight: 900; }
 
         @keyframes shake {
-            10%, 90% { transform: translate3d(-1px, 0, 0); }
-            20%, 80% { transform: translate3d(2px, 0, 0); }
-            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-            40%, 60% { transform: translate3d(4px, 0, 0); }
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
         }
         .shake { animation: shake 0.6s both; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            .box-container { width: 220px; height: 220px; }
+            .logo { height: 80px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- Logo Resmi KisahSlot -->
-            <img src="https://raw.githubusercontent.com/Tarik-K/mystery-box-assets/main/logo.png" alt="KISAH SLOT" class="logo">
+            <img src="https://kisahslot.com/wp-content/uploads/2024/02/LOGO-KISAH-SLOT-1.png" alt="KISAH SLOT" class="logo">
         </header>
 
         <main>
@@ -205,7 +224,7 @@
 
             <div class="game-area">
                 <div class="box-container" id="mystery-box">
-                    <img src="https://raw.githubusercontent.com/Tarik-K/mystery-box-assets/main/box-closed.png" alt="Mystery Box" class="box-img">
+                    <img src="https://raw.githubusercontent.com/kisahslot-dev/assets/main/mystery-box.png" alt="Mystery Box" class="box-img" onerror="this.src='https://www.freeiconspng.com/uploads/mystery-box-png-2.png'">
                 </div>
 
                 <div class="controls">
@@ -231,7 +250,7 @@
     <div id="prize-modal" class="modal">
         <div class="modal-content">
             <h2 class="congrats">SELAMAT!</h2>
-            <p style="color: #aaa;">Anda Memenangkan Hadiah:</p>
+            <p style="color: #888; font-size: 14px;">Anda Memenangkan Hadiah:</p>
             <div id="won-prize" class="won-prize"></div>
             <button class="primary-btn" id="claim-btn">KLAIM HADIAH</button>
         </div>
@@ -240,7 +259,7 @@
     <!-- Daftar Hadiah Modal -->
     <div id="list-modal" class="modal">
         <div class="modal-content list-modal">
-            <h3 style="color:var(--gold-vivid); margin-bottom:20px; text-transform: uppercase; letter-spacing: 2px;">HADIAH MYSTERY BOX</h3>
+            <h3 style="color:var(--gold-vivid); margin-bottom:25px; text-transform: uppercase; letter-spacing: 3px; font-size: 18px;">HADIAH MYSTERY BOX</h3>
             <ul class="prize-list">
                 <li><span>🎁 Saldo Kredit Rp 500.000</span> <span class="tag">UTAMA</span></li>
                 <li><span>🎁 iPhone 17 Pro Max</span></li>
@@ -249,285 +268,12 @@
                 <li><span>🎁 Saldo Kredit Rp 50.000</span></li>
                 <li><span>🎁 Saldo Kredit Rp 25.000</span></li>
             </ul>
-            <button class="primary-btn" id="close-list-btn" style="margin-top: 25px; color: black;">TUTUP</button>
+            <button class="primary-btn" id="close-list-btn" style="margin-top: 30px; color: #000;">TUTUP</button>
         </div>
     </div>
 
     <script>
-        // Setiap user akan mendapat 500rb
         const FIXED_PRIZE = "Saldo Kredit Rp 500.000";
-        
-        const winners = [
-            { name: "Riky***", prize: "Saldo Kredit Rp 500.000" },
-            { name: "Siska***", prize: "Saldo Kredit Rp 500.000" },
-            { name: "Budi***", prize: "Saldo Kredit Rp 500.000" },
-            { name: "Vicky***", prize: "Saldo Kredit Rp 500.000" }
-        ];
-
-        const userIdInput = document.getElementById('user-id');/editor) tidak terbaca saat online. Saya sudah menggantinya dengan **URL gambar absolut** agar pasti muncul.
-
-Berikut adalah kode yang sudah diperbaiki total (Silahkan copy-paste semua):
-
-```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KisahSlot Mystery Box - Hadiah Spesial Member Baru</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --background: #0b1120;
-            --gold-vivid: #eab308;
-            --gold-light: #fef08a;
-            --gold-dark: #854d0e;
-            --neutral-400: #9ca3af;
-            --neutral-900: #171717;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--background);
-            color: white;
-            font-family: 'DM Sans', sans-serif;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(234, 179, 8, 0.15), transparent 40%),
-                radial-gradient(circle at 0% 100%, rgba(234, 179, 8, 0.05), transparent 30%);
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        header { padding: 30px 0; }
-        .logo { height: 100px; max-width: 250px; object-fit: contain; filter: brightness(1.1) drop-shadow(0 0 15px rgba(234, 179, 8, 0.3)); }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 18px;
-            background: rgba(133, 77, 14, 0.2);
-            border: 1px solid rgba(234, 179, 8, 0.3);
-            border-radius: 9999px;
-            color: var(--gold-light);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            background: linear-gradient(to bottom, #ffffff 30%, #fef08a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gold-text {
-            background: linear-gradient(to right, #fef08a, #eab308, #fef08a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-
-        p.subtitle {
-            color: var(--neutral-400);
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            padding: 0 20px;
-        }
-
-        .box-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .box-container:hover { transform: scale(1.05); }
-        .box-img { width: 100%; height: 100%; object-fit: contain; }
-
-        .controls { width: 100%; display: flex; flex-direction: column; gap: 15px; }
-
-        input {
-            width: 100%;
-            height: 60px;
-            background: rgba(23, 23, 23, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: white;
-            text-align: center;
-            font-size: 18px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .support-text { font-size: 13px; color: #888; margin-top: 5px; }
-        .livechat-link { color: var(--gold-vivid); font-weight: bold; text-decoration: none; }
-
-        .primary-btn {
-            width: 100%;
-            height: 60px;
-            background: linear-gradient(180deg, #b8860b 0%, #854d0e 100%);
-            border: 1px solid rgba(234, 179, 8, 0.4);
-            border-radius: 12px;
-            color: black;
-            font-weight: 800;
-            font-size: 18px;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-        }
-        .primary-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(234, 179, 8, 0.3); }
-
-        .text-link {
-            background: none;
-            border: none;
-            color: var(--gold-vivid);
-            text-decoration: underline;
-            font-size: 13px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .social-proof {
-            width: 100%;
-            background: rgba(23, 23, 23, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 40px;
-            text-align: left;
-        }
-        .social-proof h3 {
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: var(--gold-vivid);
-            margin-bottom: 20px;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        .ticker-item {
-            font-size: 14px;
-            color: #ddd;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-        }
-        .ticker-item span { color: var(--gold-vivid); font-weight: bold; }
-
-        footer { padding: 40px 0; color: #444; font-size: 10px; letter-spacing: 2px; }
-
-        /* Modal */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9); z-index: 1000; backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: var(--neutral-900); border: 2px solid var(--gold-dark); padding: 35px; border-radius: 20px; width: 100%; max-width: 380px; text-align: center; box-shadow: 0 0 50px rgba(234, 179, 8, 0.2); }
-        .congrats { font-size: 26px; margin-bottom: 10px; color: var(--gold-vivid); font-family: 'Playfair Display', serif; }
-        .won-prize { font-size: 28px; font-weight: 900; margin: 25px 0; color: white; letter-spacing: 1px; }
-
-        .prize-list { list-style: none; text-align: left; }
-        .prize-list li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
-        .tag { background: var(--gold-vivid); color: black; font-size: 9px; padding: 3px 8px; border-radius: 4px; font-weight: 900; }
-
-        @keyframes shake {
-            10%, 90% { transform: translate3d(-1px, 0, 0); }
-            20%, 80% { transform: translate3d(2px, 0, 0); }
-            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-            40%, 60% { transform: translate3d(4px, 0, 0); }
-        }
-        .shake { animation: shake 0.6s both; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <!-- Logo Resmi KisahSlot -->
-            <img src="https://raw.githubusercontent.com/Tarik-K/mystery-box-assets/main/logo.png" alt="KISAH SLOT" class="logo">
-        </header>
-
-        <main>
-            <div class="badge">
-                <span>⚒️ JANGAN SAMPAI DILEWATKAN</span>
-            </div>
-            <h1>HADIAH SPECIAL <span class="gold-text">UNTUK MEMBER BARU!</span></h1>
-            <p class="subtitle">Masukan User Id Akun Anda Sekarang juga untuk melihat keberuntungan apa yang menanti hari ini</p>
-
-            <div class="game-area">
-                <div class="box-container" id="mystery-box">
-                    <img src="https://raw.githubusercontent.com/Tarik-K/mystery-box-assets/main/box-closed.png" alt="Mystery Box" class="box-img">
-                </div>
-
-                <div class="controls">
-                    <input type="text" id="user-id" placeholder="MASUKAN USER ID" autocomplete="off">
-                    <p class="support-text">Belum punya akun? <a href="https://static.zdassets.com/web_widget/latest/liveChat.html?v=10#key=kisahslot777.zendesk.com" target="_blank" class="livechat-link">Hubungi Livechat</a></p>
-                    <button id="open-btn" class="primary-btn">BUKA BOX SEKARANG</button>
-                    <button id="view-prizes-btn" class="text-link">Lihat Daftar Hadiah</button>
-                </div>
-
-                <div class="social-proof">
-                    <h3>PEMENANG TERAKHIR</h3>
-                    <div id="winner-ticker"></div>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            © 2024 KisahSlot Mystery Box. All rights reserved.
-        </footer>
-    </div>
-
-    <!-- Hadiah Modal -->
-    <div id="prize-modal" class="modal">
-        <div class="modal-content">
-            <h2 class="congrats">SELAMAT!</h2>
-            <p style="color: #aaa;">Anda Memenangkan Hadiah:</p>
-            <div id="won-prize" class="won-prize"></div>
-            <button class="primary-btn" id="claim-btn">KLAIM HADIAH</button>
-        </div>
-    </div>
-
-    <!-- Daftar Hadiah Modal -->
-    <div id="list-modal" class="modal">
-        <div class="modal-content list-modal">
-            <h3 style="color:var(--gold-vivid); margin-bottom:20px; text-transform: uppercase; letter-spacing: 2px;">HADIAH MYSTERY BOX</h3>
-            <ul class="prize-list">
-                <li><span>🎁 Saldo Kredit Rp 500.000</span> <span class="tag">UTAMA</span></li>
-                <li><span>🎁 iPhone 17 Pro Max</span></li>
-                <li><span>🎁 Emas Antam 3 Gram</span></li>
-                <li><span>🎁 Saldo Kredit Rp 100.000</span></li>
-                <li><span>🎁 Saldo Kredit Rp 50.000</span></li>
-                <li><span>🎁 Saldo Kredit Rp 25.000</span></li>
-            </ul>
-            <button class="primary-btn" id="close-list-btn" style="margin-top: 25px; color: black;">TUTUP</button>
-        </div>
-    </div>
-
-    <script>
-        // Setiap user akan mendapat 500rb
-        const FIXED_PRIZE = "Saldo Kredit Rp 500.000";
-        
         const winners = [
             { name: "Riky***", prize: "Saldo Kredit Rp 500.000" },
             { name: "Siska***", prize: "Saldo Kredit Rp 500.000" },
@@ -559,7 +305,7 @@ Berikut adalah kode yang sudah diperbaiki total (Silahkan copy-paste semua):
 
             mysteryBox.classList.add('shake');
             openBtn.disabled = true;
-            openBtn.innerText = "SEDANG MEMPROSES...";
+            openBtn.innerText = "PROSES...";
 
             setTimeout(() => {
                 mysteryBox.classList.remove('shake');
@@ -575,7 +321,6 @@ Berikut adalah kode yang sudah diperbaiki total (Silahkan copy-paste semua):
             window.location.href = "https://slotkisah.org/";
         });
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             if (event.target == prizeModal || event.target == listModal) {
                 prizeModal.style.display = "none";
